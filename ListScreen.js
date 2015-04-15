@@ -5,6 +5,7 @@
 'use strict';
 
 var React = require('react-native');
+var DetailScreen = require('./DetailScreen');
 
 var MOCKED_MOVIES_DATA = [
   {title: 'Star Wars: A New Hope', year: '1977', posters: {thumbnail: 'http://i.imgur.com/UePbdph.jpg'}},
@@ -19,6 +20,7 @@ var {
   NavigatorIOS,
   TabBarIOS,
   Text,
+  TouchableHighlight,
   View
 } = React;
 
@@ -67,17 +69,28 @@ var ListScreen = React.createClass({
 
   renderMovie: function(movie) {
     return (
-      <View style={styles.container}>
-        <Image
-          source={{uri: movie.posters.thumbnail}}
-          style={styles.thumbnail}
-        />
-        <View style={styles.rightContainer}>
-          <Text style={styles.title}>{movie.title}</Text>
-          <Text style={styles.year}>{movie.year}</Text>
+      <TouchableHighlight onPress={() => this.selectMovie(movie)}
+        movie={movie}>
+        <View style={styles.container}>
+          <Image
+            source={{uri: movie.posters.thumbnail}}
+            style={styles.thumbnail}
+          />
+          <View style={styles.rightContainer}>
+            <Text style={styles.title}>{movie.title}</Text>
+            <Text style={styles.year}>{movie.year}</Text>
+          </View>
         </View>
-      </View>
+      </TouchableHighlight>
     );
+  },
+
+  selectMovie: function(movie: Object) {
+    this.props.navigator.push({
+      title: movie.title,
+      component: DetailScreen,
+      passProps: {movie},
+    });
   },
 
   renderLoadingView: function() {

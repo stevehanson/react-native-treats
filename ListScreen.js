@@ -5,12 +5,7 @@
 'use strict';
 
 var React = require('react-native');
-var DetailScreen = require('./DetailScreen');
-
-var MOCKED_MOVIES_DATA = [
-  {title: 'Star Wars: A New Hope', year: '1977', posters: {thumbnail: 'http://i.imgur.com/UePbdph.jpg'}},
-  {title: 'Star Wars: Empire Strikes Back', year: '1980', posters: {thumbnail: 'http://i.imgur.com/UePbdph.jpg'}},
-];
+var DetailScreen = require('./DetailScreen')
 
 var {
   AppRegistry,
@@ -110,14 +105,16 @@ var styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#fff',
+    borderBottomWidth: 1,
+    borderBottomColor: "#eee"
   },
   rightContainer: {
     flex: 1
   },
   listView: {
-    paddingTop: 20,
-    backgroundColor: '#F5FCFF',
+    paddingTop:10,
+    backgroundColor: '#fff',
   },
   welcome: {
     fontSize: 20,
@@ -132,6 +129,7 @@ var styles = StyleSheet.create({
   thumbnail: {
     width: 53,
     height: 81,
+    margin: 10
   },
 });
 

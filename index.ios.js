@@ -6,11 +6,6 @@
 
 var React = require('react-native');
 
-var MOCKED_MOVIES_DATA = [
-  {title: 'Star Wars: A New Hope', year: '1977', posters: {thumbnail: 'http://i.imgur.com/UePbdph.jpg'}},
-  {title: 'Star Wars: Empire Strikes Back', year: '1980', posters: {thumbnail: 'http://i.imgur.com/UePbdph.jpg'}},
-];
-
 var {
   AppRegistry,
   Image,
@@ -24,16 +19,13 @@ var {
 
 var ListScreen = require('./ListScreen');
 
-var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
-
-
 var Treats = React.createClass({
   render: function() {
     return (
       <NavigatorIOS
         style={styles.container}
         initialRoute={{
-          title: 'List',
+          title: 'Treats',
           component: ListScreen,
         }}
       />
@@ -43,6 +35,8 @@ var Treats = React.createClass({
 
 var styles = {
   container: {
+    backgroundColor: '#F5C515',
+    containerBackgroundColor: 'red',
     flex: 1
   }
 }

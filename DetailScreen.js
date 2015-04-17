@@ -24,15 +24,17 @@ var DetailScreen = React.createClass({
     return (
       <View style={styles.container}>
         <Image
-          source={{uri: this.props.movie.posters.thumbnail}} style={styles.appIcon}
+          source={{uri: this.props.treat.logo}} style={styles.appIcon}
         />
-        <Text style={styles.title}>{this.props.movie.title}</Text>
-        <Text style={styles.description}>{this.props.movie.year}</Text>
-        <Button style={styles.button} onPress={this.handlePress}>
+        <Text style={styles.title}>{this.props.treat.name}</Text>
+        <Text style={styles.description}>{this.props.treat.description}</Text>
+        <TouchableHighlight style={styles.button} onPress={this.handlePress}>
           <Text style={styles.buttonText}>
             Download Latest Build
           </Text>
-        </Button>
+        </TouchableHighlight>
+
+        <View style={{flex: 1, backgroundColor: '#333', height: 1}} />
       </View>
     );
   },
@@ -57,8 +59,8 @@ var styles = StyleSheet.create({
     margin: 10
   },
   description: {
-    fontSize: 20,
-    marginTop: 10
+    fontSize: 16,
+    padding: 10
   },
   title: {
     color: 'black',
@@ -69,12 +71,15 @@ var styles = StyleSheet.create({
   button: {
     backgroundColor: '#333',
     color: '#fff',
-    padding: 40,
+    marginTop: 15,
+    padding: 15,
     borderRadius: 3
   },
+  text: {
+    padding: 30
+  },
   buttonText: {
-    margin: 10,
-    padding: 10
+    color: '#fff',
   }
 });
 

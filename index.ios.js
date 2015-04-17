@@ -36,7 +36,6 @@ var Treats = React.createClass({
 var styles = {
   container: {
     backgroundColor: '#F5C515',
-    containerBackgroundColor: 'red',
     flex: 1
   }
 }

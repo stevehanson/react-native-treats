@@ -20,7 +20,7 @@ var {
 } = React;
 
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
-
+var REQUEST_URL = 'http://treats.10.0.1.42.xip.io/api/treats.json';
 
 var ListScreen = React.createClass({
 
@@ -42,7 +42,7 @@ var ListScreen = React.createClass({
       .then((response) => response.json())
       .then((responseData) => {
         this.setState({
-          dataSource: this.state.dataSource.cloneWithRows(responseData.movies),
+          dataSource: this.state.dataSource.cloneWithRows(responseData.treats),
           loaded: true,
         });
       })
@@ -55,36 +55,36 @@ var ListScreen = React.createClass({
     }
 
     return (
-      <View>
-        <ListView dataSource={this.state.dataSource} renderRow={this.renderMovie}
+      <View style={styles.container}>
+        <ListView dataSource={this.state.dataSource} renderRow={this.renderTreat}
           style={styles.listView}/>
       </View>
     );
   },
 
-  renderMovie: function(movie) {
+  renderTreat: function(treat) {
     return (
-      <TouchableHighlight onPress={() => this.selectMovie(movie)}
-        movie={movie}>
-        <View style={styles.container}>
+      <TouchableHighlight onPress={() => this.selectTreat(treat)}
+        treat={treat}>
+        <View style={styles.treatContainer}>
           <Image
-            source={{uri: movie.posters.thumbnail}}
+            source={{uri: treat.logo}}
             style={styles.thumbnail}
           />
           <View style={styles.rightContainer}>
-            <Text style={styles.title}>{movie.title}</Text>
-            <Text style={styles.year}>{movie.year}</Text>
+            <Text style={styles.title}>{treat.name}</Text>
+            <Text style={styles.year}>{treat.description}</Text>
           </View>
         </View>
       </TouchableHighlight>
     );
   },
 
-  selectMovie: function(movie: Object) {
+  selectTreat: function(treat: Object) {
     this.props.navigator.push({
-      title: movie.title,
+      title: treat.name,
       component: DetailScreen,
-      passProps: {movie},
+      passProps: {treat},
     });
   },
 
@@ -101,20 +101,29 @@ var ListScreen = React.createClass({
 
 var styles = StyleSheet.create({
   container: {
+    flex: 1
+  },
+  treatContainer: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#fff',
     borderBottomWidth: 1,
-    borderBottomColor: "#eee"
+    borderBottomColor: "#eee",
+    paddingTop: 8,
+    paddingBottom: 8
   },
   rightContainer: {
     flex: 1
   },
   listView: {
-    paddingTop:10,
+    flex: 1,
+    paddingTop: 10,
     backgroundColor: '#fff',
+  },
+  title: {
+    fontWeight: 'bold'
   },
   welcome: {
     fontSize: 20,
@@ -128,7 +137,7 @@ var styles = StyleSheet.create({
   },
   thumbnail: {
     width: 53,
-    height: 81,
+    height: 53,
     margin: 10
   },
 });

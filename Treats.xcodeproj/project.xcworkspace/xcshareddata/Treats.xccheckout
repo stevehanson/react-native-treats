@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0EF7B068-A741-48B2-B036-A8964B3A67DA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Treats</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9FF4E9B2FC8C0B28D2E82DF918945016DD11F8D1</key>
+		<string>github.com:stevehanson/react-native-treats.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Treats.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9FF4E9B2FC8C0B28D2E82DF918945016DD11F8D1</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:stevehanson/react-native-treats.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9FF4E9B2FC8C0B28D2E82DF918945016DD11F8D1</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9FF4E9B2FC8C0B28D2E82DF918945016DD11F8D1</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Treats</string>
+		</dict>
+	</array>
+</dict>
+</plist>

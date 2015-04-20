@@ -19,7 +19,7 @@ var {
   View
 } = React;
 
-var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
+//var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 var REQUEST_URL = 'http://treats.10.0.1.42.xip.io/api/treats.json';
 
 var ListScreen = React.createClass({
@@ -112,7 +112,8 @@ var styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: "#eee",
     paddingTop: 8,
-    paddingBottom: 8
+    paddingBottom: 8,
+    paddingRight: 10
   },
   rightContainer: {
     flex: 1

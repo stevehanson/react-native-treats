@@ -35,6 +35,33 @@ var DetailScreen = React.createClass({
         </TouchableHighlight>
 
         <View style={{flex: 1, backgroundColor: '#333', height: 1}} />
+        <Text style={styles.downloadItemHeading}>Past Builds</Text>
+        <View style={styles.downloadList}>
+          <View style={styles.downloadItem}>
+            <Text style={styles.downloadItemText}>Build 1.0.7</Text>
+            <TouchableHighlight style={styles.smallButton} onPress={this.handlePress}>
+              <Text style={styles.smallButtonText}>
+                Download Latest Build
+              </Text>
+            </TouchableHighlight>
+          </View>
+          <View style={styles.downloadItem}>
+            <Text style={styles.downloadItemText}>Build 1.0.6</Text>
+            <TouchableHighlight style={styles.smallButton} onPress={this.handlePress}>
+              <Text style={styles.smallButtonText}>
+                Download Latest Build
+              </Text>
+            </TouchableHighlight>
+          </View>
+          <View style={styles.downloadItem}>
+            <Text style={styles.downloadItemText}>Build 1.0.5</Text>
+            <TouchableHighlight style={styles.smallButton} onPress={this.handlePress}>
+              <Text style={styles.smallButtonText}>
+                Download Latest Build
+              </Text>
+            </TouchableHighlight>
+          </View>
+        </View>
       </View>
     );
   },
@@ -48,7 +75,7 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: 'space-around',
     marginTop: 80,
     alignItems: 'center',
     backgroundColor: '#fff'
@@ -69,17 +96,52 @@ var styles = StyleSheet.create({
     paddingRight: 10
   },
   button: {
-    backgroundColor: '#333',
-    color: '#fff',
+    backgroundColor: '#fff',
+    color: '#007AFF',
     marginTop: 15,
     padding: 15,
+    borderWidth: 2,
+    borderColor: '#007AFF',
     borderRadius: 3
+  },
+  smallButton: {
+    backgroundColor: '#fff',
+    color: '#007AFF',
+    fontSize: 15,
+    marginTop: 15,
+    padding: 3,
+    borderRadius: 3,
+    flex: 1
+  },
+  smallButtonText: {
+    color: '#007AFF',
+    fontSize: 13
   },
   text: {
     padding: 30
   },
   buttonText: {
-    color: '#fff',
+    color: '#007AFF',
+    fontSize: 18
+  },
+  downloadItemHeading: {
+    fontSize: 22,
+    marginTop: 25,
+    marginBottom: 20
+  },
+  downloadItemText: {
+    fontSize: 16,
+    flex: 1
+  },
+  downloadItem: {
+    flexDirection: "row",
+    paddingTop: 5,
+    paddingBottom: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: "#eee"
+  },
+  downloadList: {
+
   }
 });
 

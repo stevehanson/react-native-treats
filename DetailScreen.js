@@ -67,7 +67,7 @@ var DetailScreen = React.createClass({
   },
 
   handlePress: function() {
-    alert('press');
+    React.LinkingIOS.openURL(this.props.treat.url);
   }
 });
 
